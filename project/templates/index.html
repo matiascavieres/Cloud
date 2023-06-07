@@ -4,16 +4,20 @@ Project Detail
 {% endblock %}
 {% block content %}
     <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Project Management</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Access all of the current business projects from one place.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            {% if user.is_authenticated %}
-            <a href="/projects" style="background-color: #244c53;" class="btn text-white" role="button" aria-disabled="true">Project Listings</a>
-            {% else %}
-            <a href="/accounts/login" style="background-color: #244c53;" class="btn text-white" role="button" aria-disabled="true">Log In</a>
-            {% endif %}
-          </div>
+      <h1 class="display-5 fw-bold">Gestión de proyectos</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Revisa todos tus proyectos desde un solo lugar.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          {% if user.is_authenticated %}
+          <a href="/projects" style="background-color: #244c53;" class="btn text-white" role="button" aria-disabled="true">Listado de proyectos</a>
+          {% else %}
+          <a href="/accounts/login" style="background-color: #244c53;" class="btn text-white" role="button" aria-disabled="true">Log In</a>
+          {% endif %}
         </div>
       </div>
+      <div class="my-5">
+        {% load static %}
+        <img src="{% static '../static/project_manager.png' %}" alt="" width="494px" height="383px">
+      </div>
+    </div>
 {% endblock %}
