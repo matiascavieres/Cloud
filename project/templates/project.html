@@ -33,8 +33,9 @@ Project Listings
                 </div>
               </div>
               {% endfor %}
+              <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
               {% if perms.project.can_add_new_project  %}
-              <a href="/project/new" class="btn btn-md mb-5 px-4 gap-3 w-75" style="background-color: #244c53 ; color: white;" role="button" aria-disabled="true">Nuevo Proyecto</a>
+              <a href="/project/new" class="btn  btn-lg px-4 gap-3" style="background-color: #244c53 ; color: white;" role="button" aria-disabled="true">Crear Proyecto</a>
               {% endif %}
             </div>
           </div>
