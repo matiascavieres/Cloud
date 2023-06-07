@@ -10,34 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <style> 
       html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          font-family: 'Roboto', sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Roboto', sans-serif;
       }
       .titulo-izquierda {
-          letter-spacing: 5px;
-          text-align: left;
-          margin-left: 40px;
-
+        letter-spacing: 5px;
+        text-align: left;
+        margin-left: 40px;
+        .form-group {
+        margin-bottom: 20px;
       }
     </style>
 
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid" style="background-color: #1f3f45">
       <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item">
+            <a href="/" class="nav-link" aria-current="page" style="color: antiquewhite !important">Home</a>
+          </li>
           {% if user.is_authenticated %}
-          <li class="nav-item"><a href="" class="nav-link">{{user.username|title}}</a></li>
-          <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout poto </a></li>
+          <li class="nav-item">
+            <a href="" class="nav-link" style="color: antiquewhite !important">{{user.username|title}}</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link" style="color: antiquewhite !important">Logout</a>
+          </li>
           {% else %}
-          <li class="nav-item"><a href="/accounts/login" class="nav-link">Login</a></li>
+          <li class="nav-item">
+            <a href="/accounts/login" class="nav-link" style="color: antiquewhite !important">Log In</a>
+          </li>
           {% endif %}
         </ul>
       </header>
