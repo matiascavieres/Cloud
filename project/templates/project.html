@@ -20,6 +20,7 @@ Project Listings
 
         </div>
         {% comment %} container grande {% endcomment %}
+
         <div class=" col-8 container d-flex justify-content-center align-items-start " style="background-color: white">
           <div class="container  d-flex text-center  justify-content-center">
             <div class="row align-items-center w-50" style="margin-top: 100px;">
@@ -33,13 +34,11 @@ Project Listings
                 </div>
               </div>
               {% endfor %}
-            
               <div class="position-static d-block mb-5">
                 {% if perms.project.can_add_new_project  %}
                 <a href="/project/new" class="btn  btn-lg px-4 gap-3" style="background-color: #244c53 ; color: white; " role="button" aria-disabled="true">Crear Proyecto</a>
                 {% endif %}
               </div>
-            
           </div>
         </div>
     </div>
