@@ -4,34 +4,41 @@
 
 {% block content %}
 <div class="row vh-100">
+  <!-- Columna izquierda -->
   <div class="col-5 d-flex flex-column justify-content-center align-items-center" style="background-color: #244C53">
-      <h1 class="text-white align-self-center" style="letter-spacing: 2px;">Ingresa a tu cuenta</h1>
-      <p style="color: antiquewhite">Revisa todos tus proyectos desde un solo lugar</p>
+    <!-- Título principal -->
+    <h1 class="text-white align-self-center" style="letter-spacing: 2px;">Ingresa a tu cuenta</h1>
+    <!-- Descripción del propósito -->
+    <p style="color: antiquewhite">Revisa todos tus proyectos desde un solo lugar</p>
   </div>
 
-
+  <!-- Columna derecha -->
   <div class="col-7 d-flex align-items-center">
     <div>
+      <!-- Formulario para iniciar sesión -->
       <form method="post" style="margin-left: 40px;">
         {% csrf_token %}
         <div class="form-group">
           <p style="padding-left: 5px;">Nombre de usuario:</p>
+          <!-- Etiqueta y campo de entrada para el nombre de usuario -->
           <label for="{{ form.username.id_for_label }}"></label>
           {{ form.username }}
         </div>
         <p style="margin-top: 10px; padding-left: 5px;">Contraseña: </p>
         <div class="form-group">
+          <!-- Etiqueta y campo de entrada para la contraseña -->
           <label for="{{ form.password.id_for_label }}"></label>
           {{ form.password }}
-        </div> 
+        </div>
+        <!-- Botón de envío para iniciar sesión -->
         <button type="submit" style="margin-top: 10px; margin-left: 3px; background-color: #244C53 !important;" class="btn text-white">Log In</button>
       </form>
     </div>
     <div class="my-5">
+      <!-- Imagen relacionada al proyecto (se encuentra en la carpeta static) -->
       {% load static %}
       <img src="{% static '../static/body_of_knowledge.jpg' %}" alt="" style="width: 500px; margin-left: 70px;">
     </div>
   </div>
-
 </div>
 {% endblock %}
