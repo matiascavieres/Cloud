@@ -1,22 +1,27 @@
 {% extends "base.html" %}
-{% block title %} Project Detail {% endblock %} {% block content %}
 
+{% block title %} Project Detail {% endblock %} 
+
+{% block content %}
+<!-- Bloque de contenido -->
 <div>
     <div class="row vh-100" style="overflow-x: hidden">
+        <!-- Columna izquierda -->
         <div class="d-flex flex-column justify-content-center col-4 text-center" style="background-color: #244c53">
             <h1 class="text-white align-self-center" style="letter-spacing: 2px;">{{detail.name}}</h1>
         </div>
+        <!-- Columna derecha -->
         <div class="col-8 d-flex container justify-content-center align-items-center" style="background-color: white">
-            
-                <h3 class="d-flex px-5">{{detail.description}}</h3>
-                <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
-                  {% if user.is_authenticated %}
-                  <a href="/projects" class="btn  btn-lg px-4 gap-3" style="background-color: #244c53 ; color: white;" role="button" aria-disabled="true">Project Listings</a>
-                  {% else %}
-                  <a href="/accounts/login" class="btn btn-lg px-4 gap-3" style="background-color: #244c53 ; color: white;" role="button" aria-disabled="true">Login</a>
-                  {% endif %}
-                </div>
-            
+            <h3 class="d-flex px-5">{{detail.description}}</h3>
+            <!-- Botón para usuarios autenticados -->
+            <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
+                {% if user.is_authenticated %}
+                <a href="/projects" class="btn btn-lg px-4 gap-3" style="background-color: #244c53; color: white;" role="button" aria-disabled="true">Project Listings</a>
+                <!-- Botón para usuarios no autenticados -->
+                {% else %}
+                <a href="/accounts/login" class="btn btn-lg px-4 gap-3" style="background-color: #244c53; color: white;" role="button" aria-disabled="true">Login</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

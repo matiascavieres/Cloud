@@ -1,10 +1,13 @@
-{% extends "base.html" %} {% block title %} New Project {% endblock %} {% block content %}
-
+{% extends "base.html" %} 
+{% block title %} New Project {% endblock %} 
+{% block content %}
 
 <style>
+    /* Estilo para el formulario */
     #my-form {
         font-family: "roboto", sans-serif;
     }
+    /* Estilo para el botón personalizado */
     .my-button{
         background-color: #244c53;
         color: white;
@@ -12,17 +15,25 @@
 </style>
 <div>
     <div class="row vh-100" style="overflow-x: hidden">
+        <!-- Columna izquierda -->
         <div class="d-flex flex-column justify-content-center col-4 text-center" style="background-color: #244c53">
+<<<<<<< Updated upstream
             <h1 class="text-white align-self-center" style="letter-spacing: 2px;">Nuevo Proyecto</h1>
+=======
+            <!-- Título en la columna izquierda -->
+            <h1 class="titulo-izquierda display-5 fw-bold " style="color: white">Nuevo Proyecto</h1>
+>>>>>>> Stashed changes
         </div>
         
 
+        <!-- Columna derecha -->
         <div class="col-8 container d-flex justify-content-center align-items-center" style="background-color: white">
             <form id="my-form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="{{ form.name.id_for_label }}">Nombre:</label>
                     <div>
+                        <!-- Campo de entrada para el nombre del proyecto -->
                         {{ form.name }}
                         {% for error in form.name.errors %}
                         <p style="color: red">{{ error }}</p>
@@ -32,6 +43,7 @@
                 <div class="form-group">
                     <label for="{{ form.slug.id_for_label }}">Código:</label>
                     <div>
+                        <!-- Campo de entrada para el código del proyecto -->
                         {{ form.slug }}
                         {% for error in form.slug.errors %}
                         <p style="color: red">{{ error }}</p>
@@ -41,12 +53,14 @@
                 <div class="form-group">
                     <label for="{{ form.description.id_for_label }}">Descripción:</label>
                     <div>
+                        <!-- Campo de entrada para la descripción del proyecto -->
                         {{ form.description }}
                         {% for error in form.description.errors %}
                         <p style="color: red">{{ error }}</p>
                         {% endfor %}
                     </div>
                 </div>
+                <!-- Botón de envío del formulario -->
                 <input type="submit" value="Submit" class="btn my-button" />
             </form>
         </div>
