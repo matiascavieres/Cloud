@@ -20,16 +20,17 @@ Project Listings
 
         </div>
         {% comment %} container grande {% endcomment %}
+
         <div class=" col-8 container d-flex justify-content-center align-items-start " style="background-color: white">
-          <div class="container px-4 py-4  text-center">
-            <div class="row align-items-center w-75">
+          <div class="container  d-flex text-center  justify-content-center">
+            <div class="row align-items-center w-50" style="margin-top: 100px;">
               {% for project in projects %}
-              <div class="card mb-4 box-shadow w-75  l-75">
-                <a class="text-dark" href="{{project.get_absolute_url}}">
+              <div class="card mb-4 box-shadow " style="background-color: #D9D9D9;">
+                <a class="text-dark" href="{{project.get_absolute_url}}" style="text-decoration: none; margin-top: 10px;">
                 <div class="col-sm">
                   <h2 style="font-size:18px;font-weight:bold">{{project.name}}</h2>
                 </a>
-                <p class="card-text">{{project.description}}</p>
+                <p class="card-text" style="margin-bottom: 5px;">{{project.description}}</p>
                 </div>
               </div>
               {% endfor %}
