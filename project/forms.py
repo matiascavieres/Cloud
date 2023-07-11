@@ -1,5 +1,5 @@
 from django import forms
-
+from django.core.exceptions import ValidationError
 from .models import Project
 
 
@@ -11,7 +11,7 @@ class ProjectForm(forms.ModelForm):
             "slug",
             "description",
         ]
-        
+
     def clean_name(self):
         name = self.cleaned_data.get('name')
         # Validar que el nombre no esté vacío
