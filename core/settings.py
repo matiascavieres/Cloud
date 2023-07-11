@@ -55,7 +55,7 @@ DATABASES = {
         "USER": "admin",
         "PASSWORD": "12345678",
         "HOST": "cloud-test1.cua5culcgvsv.us-east-1.rds.amazonaws.com",
-        "PORT": 3306
+        "PORT": 3306,
     }
 }
 
