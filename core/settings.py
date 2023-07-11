@@ -51,10 +51,10 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "sipapi",
+        "NAME": "project_management",
         "USER": "admin",
-        "PASSWORD": "12345678",
-        "HOST": "cloud-test1.cua5culcgvsv.us-east-1.rds.amazonaws.com",
+        "PASSWORD": "123456789",
+        "HOST": "e4u4ti2053rds.cfgctnwxlqix.us-east-1.rds.amazonaws.com",
         "PORT": 3306
         
     }
